@@ -1,0 +1,43 @@
+{
+  "notifications": {
+    "enabled": true,
+    "channels": {
+      "email": {
+        "enabled": true,
+        "provider": "ses",
+        "from": "noreply@example.com",
+        "replyTo": "support@example.com",
+        "rateLimit": 100,
+        "retryAttempts": 3
+      },
+      "sms": {
+        "enabled": true,
+        "provider": "twilio",
+        "rateLimit": 50,
+        "retryAttempts": 3
+      },
+      "push": {
+        "enabled": true,
+        "provider": "fcm",
+        "rateLimit": 1000,
+        "retryAttempts": 2
+      },
+      "webhook": {
+        "enabled": true,
+        "timeout": 5000,
+        "retryAttempts": 3
+      }
+    },
+    "queue": {
+      "enabled": true,
+      "provider": "sqs",
+      "maxRetries": 5,
+      "deadLetterQueue": true
+    },
+    "templates": {
+      "enabled": true,
+      "storage": "s3",
+      "caching": true
+    }
+  }
+}
