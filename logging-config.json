@@ -1,0 +1,25 @@
+{
+  "logging": {
+    "enabled": true,
+    "format": "json",
+    "includeTimestamp": true,
+    "includeContext": true,
+    "transports": [
+      {
+        "type": "console",
+        "level": "debug"
+      },
+      {
+        "type": "file",
+        "level": "info",
+        "filename": "app.log",
+        "maxSize": "10MB",
+        "maxFiles": 5
+      }
+    ],
+    "sanitization": {
+      "enabled": true,
+      "fieldsToRedact": ["password", "token", "apiKey", "secret"]
+    }
+  }
+}
