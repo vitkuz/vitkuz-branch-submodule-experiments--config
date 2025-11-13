@@ -1,0 +1,9 @@
+{
+  "feature": "awesome-feature",
+  "enabled": true,
+  "settings": {
+    "apiTimeout": 5000,
+    "retryAttempts": 3,
+    "logging": "debug"
+  }
+}
