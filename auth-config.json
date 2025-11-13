@@ -4,18 +4,29 @@
     "provider": "jwt",
     "tokenExpiry": "24h",
     "refreshTokenExpiry": "7d",
-    "saltRounds": 10,
-    "sessionTimeout": 3600,
+    "saltRounds": 12,
+    "sessionTimeout": 1800,
     "multiFactorAuth": {
       "enabled": false,
       "providers": ["totp", "sms"]
     },
     "passwordPolicy": {
-      "minLength": 8,
+      "minLength": 12,
       "requireUppercase": true,
       "requireLowercase": true,
       "requireNumbers": true,
-      "requireSpecialChars": true
+      "requireSpecialChars": true,
+      "preventCommonPasswords": true,
+      "maxPasswordAge": 90
+    },
+    "security": {
+      "maxLoginAttempts": 5,
+      "lockoutDuration": 900,
+      "ipWhitelist": false,
+      "requireEmailVerification": true,
+      "csrfProtection": true,
+      "httpOnlyCookies": true,
+      "secureCookies": true
     }
   }
 }
