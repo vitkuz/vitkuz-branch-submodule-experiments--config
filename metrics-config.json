@@ -1,0 +1,35 @@
+{
+  "metrics": {
+    "enabled": true,
+    "exportInterval": 60000,
+    "retention": 86400000,
+    "exporters": [
+      {
+        "type": "prometheus",
+        "enabled": true,
+        "port": 9090,
+        "path": "/metrics"
+      },
+      {
+        "type": "cloudwatch",
+        "enabled": false,
+        "namespace": "MyApp",
+        "region": "us-east-1"
+      }
+    ],
+    "collectors": {
+      "system": {
+        "enabled": true,
+        "metrics": ["cpu", "memory", "disk", "network"]
+      },
+      "application": {
+        "enabled": true,
+        "metrics": ["requests", "errors", "latency", "activeUsers"]
+      },
+      "database": {
+        "enabled": true,
+        "metrics": ["queries", "connections", "slowQueries"]
+      }
+    }
+  }
+}
