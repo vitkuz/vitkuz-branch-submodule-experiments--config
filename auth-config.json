@@ -1,0 +1,21 @@
+{
+  "authentication": {
+    "enabled": true,
+    "provider": "jwt",
+    "tokenExpiry": "24h",
+    "refreshTokenExpiry": "7d",
+    "saltRounds": 10,
+    "sessionTimeout": 3600,
+    "multiFactorAuth": {
+      "enabled": false,
+      "providers": ["totp", "sms"]
+    },
+    "passwordPolicy": {
+      "minLength": 8,
+      "requireUppercase": true,
+      "requireLowercase": true,
+      "requireNumbers": true,
+      "requireSpecialChars": true
+    }
+  }
+}
