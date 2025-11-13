@@ -4,6 +4,14 @@
   "settings": {
     "apiTimeout": 5000,
     "retryAttempts": 3,
-    "logging": "debug"
+    "logging": "debug",
+    "rateLimiting": {
+      "enabled": true,
+      "maxRequestsPerMinute": 100
+    },
+    "memoryManagement": {
+      "maxHeapSize": "512MB",
+      "gcInterval": 30000
+    }
   }
 }
