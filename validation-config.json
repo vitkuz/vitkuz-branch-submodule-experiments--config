@@ -1,0 +1,38 @@
+{
+  "validation": {
+    "enabled": true,
+    "strictMode": false,
+    "failFast": false,
+    "sanitization": {
+      "enabled": true,
+      "trimStrings": true,
+      "removeExtraSpaces": true,
+      "normalizeEmail": true
+    },
+    "customRules": {
+      "enabled": true,
+      "allowDynamicRules": false
+    },
+    "errorMessages": {
+      "locale": "en",
+      "customMessages": true
+    },
+    "schemas": {
+      "user": {
+        "email": ["required", "email"],
+        "password": ["required", "minLength:8", "maxLength:128"],
+        "age": ["required", "min:18", "max:120"]
+      },
+      "product": {
+        "name": ["required", "minLength:3", "maxLength:200"],
+        "price": ["required", "min:0"],
+        "sku": ["required", "pattern:^[A-Z0-9-]+$"]
+      },
+      "order": {
+        "userId": ["required"],
+        "items": ["required"],
+        "total": ["required", "min:0"]
+      }
+    }
+  }
+}
