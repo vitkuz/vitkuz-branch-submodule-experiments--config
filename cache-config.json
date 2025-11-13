@@ -1,0 +1,29 @@
+{
+  "cache": {
+    "enabled": true,
+    "provider": "memory",
+    "defaultTTL": 3600000,
+    "maxSize": 1000,
+    "layers": {
+      "api": {
+        "enabled": true,
+        "ttl": 300000,
+        "maxSize": 500
+      },
+      "database": {
+        "enabled": true,
+        "ttl": 600000,
+        "maxSize": 1000
+      },
+      "session": {
+        "enabled": true,
+        "ttl": 1800000,
+        "maxSize": 10000
+      }
+    },
+    "eviction": {
+      "strategy": "lru",
+      "checkInterval": 60000
+    }
+  }
+}
